@@ -1,30 +1,20 @@
-class Solution 
-{
+class Solution {
 public:
-    int removeElement(vector<int>& nums, int val) 
-    {
-        int count =0;
+    int removeElement(vector<int>& nums, int val) {
         vector<int> lux;
-
-        for(int i=0 ; i < nums.size();i++)
+        int count =0;
+        int n = nums.size();
+        for(int i =0 ; i < n;i++)
         {
-            if(nums[i] != val)
+            if(nums[i]!= val)
             {
                 lux.push_back(nums[i]);
-            
                 count++;
 
             }
-
-            
-
-            
-
         }
-        cout<<count<<endl;
-        nums=lux;
-        
+        nums = lux;
         return count;
-
+        
     }
 };
