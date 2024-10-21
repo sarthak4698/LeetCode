@@ -1,11 +1,11 @@
 class Solution {
 public:
-    bool isPalindrome(string s) 
-    {
-        int start =0;
-        int end = s.size()-1;
+    bool isPalindrome(string s) {
 
-        while (start <= end)
+        int start = 0;
+        int end = s.length()-1;
+        
+        while(start <= end)
         {
             if(!isalnum(s[start]))
             {
@@ -13,26 +13,26 @@ public:
                 continue;
 
             }
-            if(!isalnum(s[end]))
+
+            if (!isalnum(s[end]))
             {
                 end--;
                 continue;
-
             }
 
             if(tolower(s[start]) != tolower(s[end]))
             {
                 return false;
             }
-
             else
             {
                 start ++;
-                end --;
-            }
+                end--;
 
+            }
         }
-        
+
         return true;
+        
     }
 };
