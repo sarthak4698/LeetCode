@@ -7,5 +7,6 @@ public:
         string ths[]={"","M","MM","MMM"};
         
         return ths[num/1000] + hrns[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];
+        
     }
 };
