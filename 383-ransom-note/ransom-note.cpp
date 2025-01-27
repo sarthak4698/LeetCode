@@ -1,26 +1,29 @@
 class Solution {
 public:
     bool canConstruct(string ransomNote, string magazine) {
-        int i=0;
-        int j =0;
-        sort(ransomNote.begin(),ransomNote.end());
-        
-        sort(magazine.begin(),magazine.end());
+        map<char ,int>r,m;
 
-        for(int j=0 ;j<magazine.length(); j++)
+        for(int i =0 ; i<ransomNote.length();i++)
         {
-            if(ransomNote[i]==magazine[j])
+            r[ransomNote[i]]++;
+
+        }
+
+        for(int i =0 ; i<magazine.length();i++)
+        {
+            m[magazine[i]]++;
+
+        }
+
+        for(int i =0 ; i<ransomNote.length();i++)
+        {
+            if(r[ransomNote[i]]>m[ransomNote[i]])
             {
-                i++;
+                return false;
 
-                if(i==ransomNote.length())
-                {
-                    return true;
-
-                }
             }
         }
-        return false;
+        return true;
 
     }
 };
