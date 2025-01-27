@@ -1,19 +1,24 @@
 class Solution {
 public:
     int lengthOfLastWord(string s) {
+        int length =0;
+        bool count = false ;
 
-        int end = s.length() -1 ;
-        while(end >= 0 && s[end]== ' ')
+        for (int i =s.length()-1 ; i>=0;i--)
         {
-            end --;
-        }
-        int start=end;
-        while( start >= 0 && s[start]!= ' ')
-        {
-            start --;
+            if(s[i]!=' ')
+            {
+                count=true ;
+                length ++;
 
-        }
-        return end - start;
+            }
+            else if(count)
+            {
+                break;
 
+            }
+        }
+        return length ;
+        
     }
 };
