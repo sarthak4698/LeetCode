@@ -4,7 +4,7 @@ class Solution(object):
         original = x
         spm =0
 
-        if (x <0 and x==0 ):
+        if (x <0 and x==0 and x is not 0):
             return False
 
         while x>0:
