@@ -7,12 +7,13 @@ class Solution(object):
         """
         n = len(nums)
         first =-1
-        second =-1
+        second=-1
+
         for i in range(n):
-            if nums[i]== target:
+            if nums[i]==target:
                 if first ==-1:
                     first =i
                 
                 second =i
         
-        return [first , second]
+        return (first , second)
