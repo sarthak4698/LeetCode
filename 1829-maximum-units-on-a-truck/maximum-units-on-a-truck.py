@@ -1,13 +1,16 @@
-class Solution:
-    def maximumUnits(self, boxTypes: List[List[int]], truckSize: int) -> int:
-        b = sorted(boxTypes , key =lambda x:x[1] , reverse = True)
-        c=0
-        for box , n in b:
-            if(truckSize == 0 ):
-                return c
+class Solution(object):
+    def maximumUnits(self, boxTypes, truckSize):
+        
+        boxTypes.sort(key = lambda x:x[1] , reverse=True)
+        total =0
+
+        for box, n in boxTypes:
+            if truckSize==0:
+                return total
             
-            boxes = min(box ,truckSize)
-            c += boxes * n
+            boxes =min(box , truckSize)
+            total +=boxes*n
 
             truckSize -=boxes
-        return c
+        
+        return total
