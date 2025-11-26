@@ -1,19 +1,19 @@
 class Solution(object):
     def isPalindrome(self, x):
-        rev =0
-        original = x
-        spm =0
-
-        if (x <0 and x==0 and x is not 0):
+        if x<0:
             return False
 
+        rev = 0
+        temp =x 
+
         while x>0:
-            spm = x%10
-            rev = rev *10+spm
-            x=x//10
+            digit = x%10
+            rev = rev*10 + digit 
+            x = x//10
 
-
-        if(rev == original):
+        if rev == temp:
             return True
         else:
-            return False       
+            return False
+
+        
